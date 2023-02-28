@@ -9,6 +9,12 @@ def function_f(x):
 def function_g(x):
     return (math.log(x) ** 2) - math.log(x) + 0.25
 
+def function_p(x):
+    return (2 - x) * math.exp(x)
+
+def function_q(x):
+    return x ** 3 + 3 * x ** 2 + 12 * x + 3
+
 
 def bisection(func: callable, x1: float, x2: float, eps: float, n: int) -> Tuple[float, float]:
     mn = 0.5 * (x1 + x2)
@@ -117,8 +123,12 @@ e3 = 1e-6
 a = 0.1
 b = 2
 
-fun_number = input("Choose function (1 - f((math.log(x) ** 2) - 0.75 * math.log(x) + 0.125), 2 - g((math.log(x) ** 2) "
-                   "- math.log(x) + 0.25): ")
+fun_number = input("Choose function \n"
+                   "1 - f((math.log(x) ** 2) - 0.75 * math.log(x) + 0.125,\n"
+                   "2 - g((math.log(x) ** 2) - math.log(x) + 0.25),\n"
+                   "3 - p((2 - x) * math.exp(x)), \n"
+                   "4 - q(x ** 3 + 3 * x ** 2 + 12 * x + 3) \n"
+                   )
 
 method = function_f
 
