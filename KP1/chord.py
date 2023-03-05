@@ -1,11 +1,15 @@
 import math
 
-print("Вкажiть 1 точку: ", end="")
+import math
+from typing import Tuple
+
+print("Вкажiть 1 точку: ")
 ax = float(input())
-print("Вкажiть 2 точку: ", end="")
+print("Вкажiть 2 точку: ")
 bx = float(input())
-print("Яка точнiсть: ", end="")
+print("Яка точнiсть: ")
 t = float(input())
+
 
 y = 0
 yy = 0
@@ -14,37 +18,18 @@ ay = 1
 by = 1
 
 
-def fx(x):
-    global y
-    y = (math.log(x) ** 2) - (0.75 * math.log(x)) + 0.125
+def function_f(x):
+    return (math.log(x) ** 2) - (0.75 * math.log(x)) + 0.125
 
 
-def fx2(x):
-    global yy
-    yy = (math.log(x) ** 2) - math.log(x) + 0.25
+def chord_method(func: callable, x1: float, x2: float, eps: float, n: int) -> float:
+    while abs(x2 - x1) > 2 * eps:
+        x1 = x2 - func(x2) * (x2 - x1) / (func(x2) - func(x1))
+        x2 = x1 - func(x1) * (x1 - x2) / (func(x1) - func(x2))
+        n += 1
+    return x2
 
 
-fx(ax)
-fx2(ax)
-if y * yy < 0:
-    while abs(ay) > t:
-        fx(ax)
-        ay = y
-        fx(bx)
-        by = y
-        ax = -ay * (bx - ax) / (by - ay) + ax
-        c += 1
-    print()
-    print(f"Корiнь: {ax}")
-    print(f"Кiлькiсть крокiв: {c}")
-else:
-    while abs(by) > t:
-        fx(ax)
-        ay = y
-        fx(bx)
-        by = y
-        bx = -by * (ax - bx) / (ay - by) + bx
-        c += 1
-    print()
-    print(f"Корiнь: {bx}")
-    print(f"Кiлькiсть крокiв: {c}")
+
+print()
+print(f"Корiнь: {chord_method(function_f, ax, bx, t, 1)}")

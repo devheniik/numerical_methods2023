@@ -23,5 +23,6 @@ def SecantMethod(f: Callable[[float], float], x0: float, x1: float, pog: float) 
 x0 = float(input("Вкажiть 1 точку: "))
 x1 = float(input("Вкажiть 2 точку: "))
 pog = float(input("Яка точнiсть: "))
+
 root = SecantMethod(lambda x: (math.log(x) ** 2) - math.log(x) + 0.25, x0, x1, pog)
 print(f"Корiнь: {root}")
