@@ -156,6 +156,10 @@ if fun_number == "1":
     method = function_f
 elif fun_number == "2":
     method = function_g
+elif fun_number == "3":
+    method = function_p
+elif fun_number == "4":
+    method = function_q
 
 way = bisection
 
