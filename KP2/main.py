@@ -3,14 +3,16 @@ from typing import Tuple
 
 
 def function_f(x):
-    return (math.log(x) ** 2) - (0.75 * math.log(x)) + 0.125
+    return (math.cos(x) ** 2) + (0.5 * math.cos(x)) + (1 / 18)
 
 
 def function_g(x):
-    return (math.log(x) ** 2) - math.log(x) + 0.25
+    return (math.cos(x) ** 2) + ((1 / 3) * math.cos(x)) + (1 / 36)
+
 
 def function_p(x):
     return (2 - x) * math.exp(x)
+
 
 def function_q(x):
     return x ** 3 + 3 * x ** 2 + 12 * x + 3
