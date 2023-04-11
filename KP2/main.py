@@ -148,7 +148,8 @@ way_number = input("Choose method:\n"
                    "2 Chord method\n"
                    "3 Secant method\n"
                    "4 Newton method\n"
-                   "5 Simple Iteration Simple method\n"
+                   "5 Newton simple method\n"
+                   "6 Simple Iteration Simple method\n"
                    "Your choose: ")
 
 if fun_number == "1":
