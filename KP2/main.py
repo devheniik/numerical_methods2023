@@ -88,7 +88,7 @@ def newton(func: Callable[[float], float], x1: float, x2: float, eps: float, n: 
 
 
 
-def newton_simpl(func: Callable[[float], float], x1: float, x2: float, eps: float, n: int) -> Tuple[float, float]:
+def newton_simple(func: Callable[[float], float], x1: float, x2: float, eps: float, n: int) -> Tuple[float, float]:
     x = x2
     alpha = 1e-9
     delta = 1
